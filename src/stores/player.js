@@ -8,8 +8,8 @@ const defaultPlayer = () => ({
   expToNext: 20,
   hp: 50,
   hpMax: 50,
-  ap: 3,
-  apMax: 3,
+  ap: 5,
+  apMax: 5,
   position: 3,
   attrs: {
     atk: 10,
