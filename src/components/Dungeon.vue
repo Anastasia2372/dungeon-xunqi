@@ -47,7 +47,14 @@ function enterCurrentRoom() {
     return
   }
   if (r.type === 'boss') {
-    initBattle([r.bossId], { floor: dungeon.currentFloor, roomIdx: dungeon.currentRoom, isBoss: true, firstAwakening: currentFloor.value.firstAwakening })
+    initBattle([r.bossId], {
+      floor: dungeon.currentFloor,
+      roomIdx: dungeon.currentRoom,
+      isBoss: true,
+      firstAwakening: currentFloor.value.firstAwakening,
+      secondAwakening: currentFloor.value.secondAwakening,
+      finalAwakening: currentFloor.value.finalAwakening
+    })
     emit('start-combat', r)
     return
   }

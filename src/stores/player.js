@@ -25,12 +25,15 @@ const defaultPlayer = () => ({
   },
   skills: ['aimed_shot', 'quick_shot', 'set_trap'],
   dragonArts: [],
-  activeDragonArt: null,
+  activeDragonArts: [],
+  dragonArtsSlots: 1,
   dragonMeter: 0,
   dragonMeterMax: 100,
   flags: {
     prologueDone: false,
     firstAwakening: false,
+    secondAwakening: false,
+    finalAwakening: false,
     knowsAboutBlood: false
   }
 })
@@ -39,6 +42,9 @@ export const player = reactive(defaultPlayer())
 
 export function resetPlayer(overrides = {}) {
   Object.assign(player, defaultPlayer(), overrides)
+  if (!Array.isArray(player.activeDragonArts)) {
+    player.activeDragonArts = player.activeDragonArt ? [player.activeDragonArt] : []
+  }
 }
 
 export function gainExp(amount) {
@@ -84,4 +90,37 @@ export function consumeDragonMeter() {
 
 export function isDragonReady() {
   return player.dragonMeter >= player.dragonMeterMax
+}
+
+export function equipDragonArt(id) {
+  if (!player.dragonArts.includes(id)) return false
+  if (player.activeDragonArts.includes(id)) return false
+  if (player.activeDragonArts.length >= player.dragonArtsSlots) {
+    player.activeDragonArts.shift()
+  }
+  player.activeDragonArts.push(id)
+  return true
+}
+
+export function unequipDragonArt(id) {
+  const idx = player.activeDragonArts.indexOf(id)
+  if (idx < 0) return false
+  player.activeDragonArts.splice(idx, 1)
+  return true
+}
+
+export function unlockDragonArt(id) {
+  if (player.dragonArts.includes(id)) return false
+  player.dragonArts.push(id)
+  if (player.activeDragonArts.length < player.dragonArtsSlots) {
+    player.activeDragonArts.push(id)
+  }
+  return true
+}
+
+export function setDragonArtsSlots(n) {
+  player.dragonArtsSlots = Math.max(1, n)
+  while (player.activeDragonArts.length > player.dragonArtsSlots) {
+    player.activeDragonArts.pop()
+  }
 }

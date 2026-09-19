@@ -7,11 +7,7 @@ export const skills = {
     userPositions: [3, 4],
     targetType: 'enemy',
     targetPositions: [1, 2, 3, 4],
-    effect: {
-      damage: { base: 15, atkScale: 1.5 },
-      accuracy: 90,
-      critBonus: 20
-    },
+    effect: { damage: { base: 15, atkScale: 1.5 }, accuracy: 90, critBonus: 20 },
     dragonGain: 6
   },
   quick_shot: {
@@ -22,10 +18,7 @@ export const skills = {
     userPositions: [2, 3, 4],
     targetType: 'enemy',
     targetPositions: [1, 2, 3, 4],
-    effect: {
-      damage: { base: 8, atkScale: 1.0 },
-      accuracy: 95
-    },
+    effect: { damage: { base: 8, atkScale: 1.0 }, accuracy: 95 },
     dragonGain: 3
   },
   set_trap: {
@@ -36,10 +29,7 @@ export const skills = {
     userPositions: [1, 2, 3, 4],
     targetType: 'ground_enemy',
     targetPositions: [1, 2, 3, 4],
-    effect: {
-      trapDamage: { base: 12, atkScale: 0.8 },
-      stunTurns: 1
-    },
+    effect: { trapDamage: { base: 12, atkScale: 0.8 }, stunTurns: 1 },
     dragonGain: 4
   },
   defend: {
@@ -49,9 +39,7 @@ export const skills = {
     apCost: 1,
     userPositions: [1, 2, 3, 4],
     targetType: 'self',
-    effect: {
-      status: { name: 'defending', duration: 1, defMultiplier: 2.0 }
-    },
+    effect: { status: { name: 'defending', duration: 1, defMultiplier: 2.0 } },
     dragonGain: 2
   },
   melee_strike: {
@@ -62,112 +50,251 @@ export const skills = {
     userPositions: [1, 2],
     targetType: 'enemy',
     targetPositions: [1, 2],
-    effect: {
-      damage: { base: 10, atkScale: 1.0 },
-      accuracy: 85
-    },
+    effect: { damage: { base: 10, atkScale: 1.0 }, accuracy: 85 },
     dragonGain: 0
   },
   bite_dive: {
     id: 'bite_dive',
     name: '扑咬',
-    description: '蝙蝠扑向一人',
     apCost: 1,
     userPositions: [1, 2, 3, 4],
     targetType: 'enemy',
     targetPositions: [1, 2, 3, 4],
-    effect: {
-      damage: { base: 5, atkScale: 1.0 },
-      accuracy: 80
-    }
+    effect: { damage: { base: 5, atkScale: 1.0 }, accuracy: 80 }
   },
   bone_slash: {
     id: 'bone_slash',
     name: '骨刃',
-    description: '骨剑挥砍',
     apCost: 1,
     userPositions: [1, 2],
     targetType: 'enemy',
     targetPositions: [1, 2],
-    effect: {
-      damage: { base: 9, atkScale: 1.0 },
-      accuracy: 85
-    }
+    effect: { damage: { base: 9, atkScale: 1.0 }, accuracy: 85 }
   },
   bone_throw: {
     id: 'bone_throw',
     name: '掷骨',
-    description: '骷髅掷出锐骨',
     apCost: 2,
     userPositions: [1, 2, 3, 4],
     targetType: 'enemy',
     targetPositions: [1, 2, 3, 4],
-    effect: {
-      damage: { base: 8, atkScale: 0.8 },
-      accuracy: 75
-    }
+    effect: { damage: { base: 8, atkScale: 0.8 }, accuracy: 75 }
   },
   stone_smash: {
     id: 'stone_smash',
     name: '巨石重击',
-    description: '石臂横扫,击退目标一格',
     apCost: 2,
     userPositions: [1, 2],
     targetType: 'enemy',
     targetPositions: [1, 2],
-    effect: {
-      damage: { base: 14, atkScale: 1.2 },
-      accuracy: 80,
-      knockback: 1
-    }
+    effect: { damage: { base: 14, atkScale: 1.2 }, accuracy: 80, knockback: 1 }
   },
   stone_guard: {
     id: 'stone_guard',
     name: '石身',
-    description: '化石戍守,承伤大减 2 回合',
     apCost: 1,
     userPositions: [1, 2, 3, 4],
     targetType: 'self',
-    effect: {
-      status: { name: 'stone_guard', duration: 2, defMultiplier: 3.0 }
-    }
+    effect: { status: { name: 'stone_guard', duration: 2, defMultiplier: 3.0 } }
   },
   captain_cleave: {
     id: 'captain_cleave',
     name: '横斩',
-    description: '兵长的横扫,对面 1-2 位同伤',
     apCost: 2,
     userPositions: [1, 2],
     targetType: 'enemy_row',
     targetPositions: [1, 2],
-    effect: {
-      damage: { base: 12, atkScale: 1.1 },
-      accuracy: 85,
-      aoePositions: [1, 2]
-    }
+    effect: { damage: { base: 12, atkScale: 1.1 }, accuracy: 85, aoePositions: [1, 2] }
   },
   captain_summon: {
     id: 'captain_summon',
     name: '召唤援兵',
-    description: '召骷髅战士援手',
     apCost: 3,
     userPositions: [1, 2, 3, 4],
     targetType: 'summon',
-    effect: {
-      summonId: 'skeleton_warrior',
-      maxAllies: 3
-    }
+    effect: { summonId: 'skeleton_warrior', maxAllies: 3 }
   },
   captain_rage: {
     id: 'captain_rage',
     name: '狂怒',
-    description: 'HP 过半后进入狂怒,伤害翻倍两回合',
     apCost: 1,
     userPositions: [1, 2, 3, 4],
     targetType: 'self',
-    effect: {
-      status: { name: 'rage', duration: 3, atkMultiplier: 1.8 }
-    }
+    effect: { status: { name: 'rage', duration: 3, atkMultiplier: 1.8 } }
+  },
+  dual_slash: {
+    id: 'dual_slash',
+    name: '双刃斩',
+    apCost: 2,
+    userPositions: [1, 2],
+    targetType: 'enemy',
+    targetPositions: [1, 2],
+    effect: { damage: { base: 11, atkScale: 1.2 }, accuracy: 85, hits: 2 }
+  },
+  wall_grab: {
+    id: 'wall_grab',
+    name: '拽墙',
+    apCost: 2,
+    userPositions: [3, 4],
+    targetType: 'enemy',
+    targetPositions: [1, 2, 3, 4],
+    effect: { damage: { base: 8, atkScale: 0.9 }, accuracy: 80, knockback: -1 }
+  },
+  wall_stare: {
+    id: 'wall_stare',
+    name: '凝视',
+    apCost: 1,
+    userPositions: [3, 4],
+    targetType: 'enemy',
+    targetPositions: [1, 2, 3, 4],
+    effect: { status: { name: 'petrified', duration: 1, defMultiplier: 0.7 } }
+  },
+  non_euclid_step: {
+    id: 'non_euclid_step',
+    name: '非欧步',
+    apCost: 2,
+    userPositions: [1, 2, 3, 4],
+    targetType: 'enemy',
+    targetPositions: [1, 2, 3, 4],
+    effect: { damage: { base: 13, atkScale: 1.3 }, accuracy: 90, teleport: true }
+  },
+  shape_pierce: {
+    id: 'shape_pierce',
+    name: '形穿',
+    apCost: 2,
+    userPositions: [2, 3],
+    targetType: 'enemy_row',
+    targetPositions: [1, 2, 3, 4],
+    effect: { damage: { base: 10, atkScale: 1.1 }, accuracy: 85, aoePositions: [1, 2, 3, 4] }
+  },
+  blind_charge: {
+    id: 'blind_charge',
+    name: '盲冲',
+    apCost: 2,
+    userPositions: [1, 2],
+    targetType: 'enemy',
+    targetPositions: [1, 2],
+    effect: { damage: { base: 16, atkScale: 1.4 }, accuracy: 60, critBonus: 15 }
+  },
+  headless_strike: {
+    id: 'headless_strike',
+    name: '无首击',
+    apCost: 1,
+    userPositions: [1, 2],
+    targetType: 'enemy',
+    targetPositions: [1, 2],
+    effect: { damage: { base: 12, atkScale: 1.1 }, accuracy: 80 }
+  },
+  warp_reality: {
+    id: 'warp_reality',
+    name: '扭曲现实',
+    apCost: 3,
+    userPositions: [1, 2, 3, 4],
+    targetType: 'all_enemies',
+    effect: { damage: { base: 12, atkScale: 1.0 }, accuracy: 95 }
+  },
+  morph_form: {
+    id: 'morph_form',
+    name: '化形',
+    apCost: 2,
+    userPositions: [1, 2, 3, 4],
+    targetType: 'self',
+    effect: { status: { name: 'morph', duration: 3, atkMultiplier: 1.4, defMultiplier: 1.4 } }
+  },
+  fire_bite: {
+    id: 'fire_bite',
+    name: '焰咬',
+    apCost: 1,
+    userPositions: [1, 2],
+    targetType: 'enemy',
+    targetPositions: [1, 2],
+    effect: { damage: { base: 11, atkScale: 1.1 }, accuracy: 88, dot: { name: 'burn', damage: 4, duration: 2 } }
+  },
+  dragon_curse: {
+    id: 'dragon_curse',
+    name: '龙诅',
+    apCost: 2,
+    userPositions: [1, 2, 3, 4],
+    targetType: 'enemy',
+    targetPositions: [1, 2, 3, 4],
+    effect: { damage: { base: 6, atkScale: 0.7 }, accuracy: 90, dot: { name: 'curse', damage: 7, duration: 3 } }
+  },
+  flame_breath: {
+    id: 'flame_breath',
+    name: '龙息吐焰',
+    apCost: 2,
+    userPositions: [2, 3, 4],
+    targetType: 'enemy_row',
+    targetPositions: [1, 2],
+    effect: { damage: { base: 14, atkScale: 1.3 }, accuracy: 85, aoePositions: [1, 2] }
+  },
+  wing_swipe: {
+    id: 'wing_swipe',
+    name: '翼扫',
+    apCost: 1,
+    userPositions: [1, 2, 3, 4],
+    targetType: 'enemy',
+    targetPositions: [1, 2, 3, 4],
+    effect: { damage: { base: 9, atkScale: 1.0 }, accuracy: 85, knockback: 1 }
+  },
+  bone_flame: {
+    id: 'bone_flame',
+    name: '骨焰',
+    apCost: 2,
+    userPositions: [3, 4],
+    targetType: 'enemy',
+    targetPositions: [1, 2, 3, 4],
+    effect: { damage: { base: 13, atkScale: 1.2 }, accuracy: 90, dot: { name: 'burn', damage: 5, duration: 2 } }
+  },
+  soul_drain: {
+    id: 'soul_drain',
+    name: '摄魂',
+    apCost: 2,
+    userPositions: [1, 2, 3, 4],
+    targetType: 'enemy',
+    targetPositions: [1, 2, 3, 4],
+    effect: { damage: { base: 10, atkScale: 1.1 }, accuracy: 85, lifeSteal: 0.5 }
+  },
+  scale_slam: {
+    id: 'scale_slam',
+    name: '鳞盾冲撞',
+    apCost: 2,
+    userPositions: [1, 2],
+    targetType: 'enemy',
+    targetPositions: [1, 2],
+    effect: { damage: { base: 18, atkScale: 1.3 }, accuracy: 85, knockback: 2 }
+  },
+  scale_wall: {
+    id: 'scale_wall',
+    name: '鳞壁',
+    apCost: 1,
+    userPositions: [1, 2, 3, 4],
+    targetType: 'self',
+    effect: { status: { name: 'scale_wall', duration: 2, defMultiplier: 2.5 } }
+  },
+  dragon_wrath: {
+    id: 'dragon_wrath',
+    name: '龙怒',
+    apCost: 3,
+    userPositions: [1, 2, 3, 4],
+    targetType: 'all_enemies',
+    effect: { damage: { base: 22, atkScale: 1.4 }, accuracy: 95, dot: { name: 'burn', damage: 6, duration: 2 } }
+  },
+  summon_hatchling: {
+    id: 'summon_hatchling',
+    name: '召幼龙',
+    apCost: 3,
+    userPositions: [1, 2, 3, 4],
+    targetType: 'summon',
+    effect: { summonId: 'hatchling', maxAllies: 3 }
+  },
+  rebirth: {
+    id: 'rebirth',
+    name: '重生',
+    apCost: 3,
+    userPositions: [1, 2, 3, 4],
+    targetType: 'self',
+    effect: { heal: 80 }
   }
 }
 
